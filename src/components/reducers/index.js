@@ -1,0 +1,2 @@
+import {ProductsReducer} from './productsReducer'
+
