@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {addToCart} from './actions/addToCart'
+import {addToCart} from '../actions/addToCart'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
@@ -26,7 +26,7 @@ class Product extends Component {
     return (
       <div className="product-container" >
         <h3>Products</h3>
-        <div class="product-list ">
+        <div className="product-list ">
           {productList}
         </div>
       </div>

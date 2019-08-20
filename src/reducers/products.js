@@ -1,10 +1,10 @@
-import { SHOW_PRODUCTS } from "../constants/productAction";
-import Item1 from '../../images/Item1.png'
-import Item2 from '../../images/Item2.png'
-import Item3 from '../../images/Item3.png'
-import Item4 from '../../images/Item4.png'
-import Item5 from '../../images/Item5.png'
-import Item6 from '../../images/Item6.png'
+import { SHOW_PRODUCTS } from "../constants/ActionTypes";
+import Item1 from '../images/Item1.jpg'
+import Item2 from '../images/Item2.jpg'
+import Item3 from '../images/Item3.jpg'
+import Item4 from '../images/Item4.jpg'
+import Item5 from '../images/Item5.jpg'
+import Item6 from '../images/Item6.jpg'
 
 const initState = {
     products: [
@@ -19,7 +19,7 @@ const initState = {
     total: 0
 }
 
-function productsReducer (state = initState, action){
+function products (state = initState, action){
     if(action.type === SHOW_PRODUCTS){
         return Object.assign({}, state, {
             product: state.product.concat(action.product)
@@ -27,4 +27,4 @@ function productsReducer (state = initState, action){
     }
     return state
 }
-export default productsReducer
+export default products
