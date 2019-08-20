@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addQuantity, subtractQuantity, removeItem } from '../actions/cart'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 class Cart extends Component {
+  handleAddQuantity = (id) => {
+    this.props.addQuantity(id)
+  }
+  handleSubtractQuantity = (id) => {
+    this.props.subtractQuantity(id)
+  }
+  handleRemoveProduct = (id) => {
+    this.props.removeItem(id)
+  }
   render() {
     let addedItems = this.props.products.length ?
       (
-        this.props.items.map(item => {
+        this.props.products.map(item => {
           return (
             <li className="product-item" key={item.id}>
               <div className="card-item">
@@ -15,6 +28,11 @@ class Cart extends Component {
                 <span className="product-desc">{item.desc}</span>
                 <span className="product-price">$ {item.price}</span>
                 <span className="product-quantity">{item.quantity}</span>
+                <div className="add-remove">
+                  <Link to="/cart"><FontAwesomeIcon icon={faArrowUp} onClick={() => { this.handleAddQuantity(item.id) }} /></Link>
+                  <Link to="/cart"><FontAwesomeIcon icon={faArrowDown} onClick={() => { this.handleSubtractQuantity(item.id) }} /></Link>
+                </div>
+                <div className="btn-remove-product btn btn-danger" onClick={() => { this.handleRemoveProduct(item.id) }}>Xóa</div>
               </div>
             </li>
           )
@@ -30,13 +48,31 @@ class Cart extends Component {
             {addedItems}
           </ul>
         </div>
+        <div className="cart-total">
+          <h5>Tổng tiền: {this.props.total}</h5>
+
+          {this.props.total !== 0 ? (
+            <span>Phí ship: 15 $ <h5>Tổng tiền trả: {this.props.total + 15}</h5></span>
+          ) : (
+              <span />
+            )}
+
+        </div>
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
   return {
-    products: state.addedItems
+    products: state.addedItems,
+    total: state.total
   }
 }
-export default connect(mapStateToProps)(Cart)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addQuantity: (id) => { dispatch(addQuantity(id)) },
+    subtractQuantity: (id) => { dispatch(subtractQuantity(id)) },
+    removeItem: (id) => { dispatch(removeItem(id)) },
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

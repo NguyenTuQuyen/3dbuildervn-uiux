@@ -1,29 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import Home from './components/Home'
 import Products from './components/Products'
 import Cart from './components/Cart'
+
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import $ from 'jquery';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Provider } from 'react-redux'
-import { createLogger } from 'redux-logger'
-import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
-import reducer from './reducers/index'
+import { createStore } from 'redux'
+import reducer from './reducers'
 import * as serviceWorker from './serviceWorker'
+
 import logo from './images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import './styles/index.css'
 
-const middleware = [ thunk ]
-if(process.env.NODE_ENV !== 'production'){
-  middleware.push(createLogger())
-}
+
 const store = createStore(
   reducer,
-  applyMiddleware(...middleware)
   )
 const routing = (
   <Router>
