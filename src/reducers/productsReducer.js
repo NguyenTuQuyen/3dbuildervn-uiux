@@ -1,3 +1,4 @@
+import {CREATE_PRODUCT, CREATE_PRODUCT_ERROR} from '../constants/ActionTypes'
 import Item1 from '../images/Item1.jpg'
 import Item2 from '../images/Item2.jpg'
 import Item3 from '../images/Item3.jpg'
@@ -17,6 +18,14 @@ const initialState = {
 }
 
 const ProductsReducer = (state = initialState, action) => {
+  if(action.type === CREATE_PRODUCT){
+    console.log("create product", action.product)
+    return state
+  }
+  if(action.type === CREATE_PRODUCT_ERROR){
+    console.log("create product error", action.err)
+    return state
+  }
   return state
 }
 export default ProductsReducer
