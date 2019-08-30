@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUndo, faBars } from '@fortawesome/free-solid-svg-icons'
 import {DropdownButton, Dropdown} from 'react-bootstrap'
-export class SignedInLink extends Component {
+export class SignedInLinks extends Component {
   render() {
     return (
       <ul>
@@ -17,4 +17,4 @@ export class SignedInLink extends Component {
   }
 }
 
-export default SignedInLink
+export default SignedInLinks
