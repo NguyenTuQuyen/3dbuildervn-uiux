@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ProductList from '../components/product/ProductList'
 import {connect} from 'react-redux'
+import {firestoreConnect} from 'react-redux-firebase'
+import {compose} from 'redux'
 
 export class ProductContainer extends Component {
   render() {
@@ -13,9 +15,15 @@ export class ProductContainer extends Component {
   }
 }
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    products: state.product.products
+    products: state.firestore.ordered.products
   }
 }
 
-export default connect(mapStateToProps)(ProductContainer)
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {collection: 'products'}
+  ])
+)(ProductContainer)
