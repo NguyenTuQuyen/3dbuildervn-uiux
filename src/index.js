@@ -8,10 +8,10 @@ import thunk from 'redux-thunk'
 import { reduxFirestore, getFirestore } from 'redux-firestore'
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
 import fbConfig from './config/fbConfig'
-import reducer from './reducers/index'
+import reducer from './store/reducers/index'
 import * as serviceWorker from './serviceWorker'
-import NavBar from './components/layout/Navbar'
 import './styles/index.css'
+import App from './container/App'
 
 const store = createStore(
   reducer,
@@ -23,6 +23,6 @@ const store = createStore(
 )
 ReactDOM.render(
   <Provider store={store} >
-    <NavBar />
+    <App />
   </Provider>, document.getElementById('root'));
 serviceWorker.unregister();

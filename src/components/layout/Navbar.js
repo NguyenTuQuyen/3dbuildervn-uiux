@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Home from '../Home'
-import Products from '../products/ProductList'
-import CreateProduct from '../products/CreateProduct'
-import Cart from '../products/Cart'
+import Home from '../../container/Home'
+import Products from '../product/ProductList'
+import CreateProduct from '../product/CreateProduct'
+import Cart from '../product/Cart'
 import SignIn from '../auth/SignIn'
 import SignUp from '../auth/SignUp'
-import SignedInLink from './SignedInLink'
-import SignedOutLink from './SignedOutLink'
+import SignedInLink from './SignedInLinks'
+import SignedOutLink from './SignedOutLinks'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import logo from '../../images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -37,7 +37,6 @@ class NavBar extends Component {
             </div>
           </nav>
         </header>
-        <Route exact path="/" component={Home} />
         <Route path="/products" component={Products} />
         <Route path="/cart" component={Cart} />
         <Route path="/signin" component={SignIn} />

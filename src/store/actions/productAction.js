@@ -4,13 +4,11 @@ export const createProduct = (product) => {
     const firestore = getFirestore()
     firestore.collection('products').add({
       ...product,
-      createAt: new Date()
+      createdAt: new Date()
     }).then(() => {
-      dispatch(() => { type: CREATE_PRODUCT, product
-      })
+      dispatch({ type: CREATE_PRODUCT, product })
     }).catch((err) => {
-      dispatch(() => { type: CREATE_PRODUCT_ERROR, err
-      })
+      dispatch({type:CREATE_PRODUCT_ERROR, err})
     })
   }
 }

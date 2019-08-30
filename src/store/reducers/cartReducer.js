@@ -1,10 +1,10 @@
 import { ADD_TO_CART, ADD_QUANTITY, SUBTRACT_QUANTITY, REMOVE_ITEM } from "../constants/ActionTypes";
-import Item1 from '../images/Item1.jpg'
-import Item2 from '../images/Item2.jpg'
-import Item3 from '../images/Item3.jpg'
-import Item4 from '../images/Item4.jpg'
-import Item5 from '../images/Item5.jpg'
-import Item6 from '../images/Item6.jpg'
+import Item1 from '../../images/Item1.jpg'
+import Item2 from '../../images/Item2.jpg'
+import Item3 from '../../images/Item3.jpg'
+import Item4 from '../../images/Item4.jpg'
+import Item5 from '../../images/Item5.jpg'
+import Item6 from '../../images/Item6.jpg'
 
 const initState = {
   products: [
