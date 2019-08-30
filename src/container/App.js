@@ -9,6 +9,7 @@ import CreateProduct from '../components/product/CreateProduct'
 import Cart from '../components/product/Cart'
 import SignIn from '../components/auth/SignIn'
 import SignUp from '../components/auth/SignUp'
+import { Checkout } from '../components/product/Checkout';
 
 class App extends Component {
   render() {
@@ -20,9 +21,11 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/products' component={ProductContainer} />
             <Route path='/product/:id' component={ProductDetail} />
-            <Route path='/signin' component={SignIn} />
+            <Route path='/login' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProduct} />
+            <Route path='/cart' component={Cart} />
+            <Route path='/checkout' component={Checkout} />
           </Switch>
         </div>
       </BrowserRouter >
