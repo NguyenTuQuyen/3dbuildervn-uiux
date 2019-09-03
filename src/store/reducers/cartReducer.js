@@ -1,20 +1,16 @@
 import { ADD_TO_CART, ADD_QUANTITY, SUBTRACT_QUANTITY, REMOVE_ITEM } from "../constants/ActionTypes";
-import Item1 from '../../images/Item1.jpg'
-import Item2 from '../../images/Item2.jpg'
-import Item3 from '../../images/Item3.jpg'
-import Item4 from '../../images/Item4.jpg'
-import Item5 from '../../images/Item5.jpg'
-import Item6 from '../../images/Item6.jpg'
 
 const initState = {
-  products: [],
+  products: [
+    {id:'6BOWi9HXHKgSGACtI2FO'}
+  ],
   addedItems: [],
   total: 0
 }
 const CartReducer = (state = initState, action) => {
   if (action.type === ADD_TO_CART) {
-    let addedItem = state.products.find(item => item.id === action.id)
-    let exitedItem = state.addedItems.find(item => action.id === item.id)
+    let addedItem = state.products.find(item => item.id === action.product.id)
+    let exitedItem = state.addedItems.find(item => action.product.id === item.id)
     if (exitedItem) {
       addedItem.quantity += 1
       return {

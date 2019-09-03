@@ -4,10 +4,10 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import CreateComment from './CreateComment'
 
 class ProductDetail extends Component {
-  handleAddProduct = (id) => {
-    
+  handleAddProduct = (id) => {   
   }
   render() {
     const { product } = this.props
@@ -22,6 +22,7 @@ class ProductDetail extends Component {
             <span className="product-description">{product.description}</span>
             <button to="/" className="btn btn-primary" onClick={() => { this.handleAddProduct(product.id) }}><FontAwesomeIcon icon={faPlus} />Add</button>
           </div>
+          <CreateComment/>
         </div>
         </div>
       )

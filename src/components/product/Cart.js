@@ -17,6 +17,8 @@ class Cart extends Component {
     this.props.removeItem(id)
   }
   render() {
+    console.log(this.props.products);
+    
     let addedItems = this.props.products.length ?
       (
         this.props.products.map(item => {
@@ -64,7 +66,7 @@ class Cart extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    products: state.cart.addedItems,
+    products: state.cart,
     total: state.cart.total
   }
 }

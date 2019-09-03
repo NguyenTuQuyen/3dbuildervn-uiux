@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {createProduct} from '../../store/actions/productAction'
 
-export class CreateProduct extends Component {
+class CreateProduct extends Component {
   state = {
     title: "",
     description: "",
@@ -49,9 +49,9 @@ export class CreateProduct extends Component {
             <label htmlFor="supplier">Nhà cung cấp</label>
             <input type="text" id="supplier" onChange={this.handleChange} />
           </div>
-          <div className="input-field img">
-            <label htmlFor="img">Ảnh sản phẩm</label>
-            <input type="file" id="img" onChange={this.handleChange} />
+          <div className="input-field image">
+            <label htmlFor="image">Ảnh sản phẩm</label>
+            <input type="file" id="image" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <button className="btn btn-primary">Tạo</button>
