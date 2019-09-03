@@ -1,0 +1,18 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+}
+.footer-content{
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 0px 140px;
+}
+.logo-group{
+  width: 300px;
+}
+@media(max-width: 768px){
+  .footer-content{
+    margin: 0px 20px;
+  }  
+}

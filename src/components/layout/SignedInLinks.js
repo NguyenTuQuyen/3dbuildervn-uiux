@@ -8,13 +8,13 @@ import { signOut } from '../../store/actions/authAction'
 
 const SignedInLinks = (props) => {
   return (
-    <ul>
+    <div>
       <DropdownButton id="dropdown-basic-button" title={<FontAwesomeIcon icon={faBars} />}>
         <Dropdown.Item href="/profile"><a><FontAwesomeIcon icon={faUser} />Profile</a></Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item href="/"><a  onClick={props.signOut}><FontAwesomeIcon icon={faUndo} />Logout</a></Dropdown.Item>
       </DropdownButton>
-    </ul>
+    </div>
   )
 
 }

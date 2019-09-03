@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import NavBar from '../components/layout/Navbar'
+import Footer from '../components/layout/Footer'
 import ProductContainer from './ProductContainer'
 import Notification from './Notification'
 import Home from '../container/Home'
@@ -10,6 +11,7 @@ import Cart from '../components/product/Cart'
 import SignIn from '../components/auth/SignIn'
 import SignUp from '../components/auth/SignUp'
 import { Checkout } from '../components/product/Checkout';
+import $ from 'jquery'
 
 class App extends Component {
   render() {
@@ -27,6 +29,7 @@ class App extends Component {
             <Route path='/cart' component={Cart} />
             <Route path='/checkout' component={Checkout} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter >
     )
