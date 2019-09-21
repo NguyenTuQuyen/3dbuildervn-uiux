@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import Slider from "react-slick";
-import imgSlider1 from '../images/3dprint.jpg'
+import imgSlider1 from '../images/slider/3dprint.jpg'
 import iconBenefit1 from '../images/icon-benefit/product.png'
 import customerIcon1 from '../images/customer-logo/Gulf_logo.png'
-import bannerBottom from '../images/banner/banner1.png'
 
 class Home extends Component {
   render() {
@@ -53,7 +52,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="feature-group">
-            <div className="card-group">
+            <div className="card-group-home">
               <div className="card-item">
                 <div className="card-image">
                   <img src={imgSlider1} alt="3dprint" />
@@ -188,8 +187,9 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="banner-bottom">
-          <img src={bannerBottom} alt="sale-product" />
+        <div className="banner-bottom-home">
+          <h4>Có hơn 50+ sản phẩm đang giảm giá</h4>
+          <button>Xem ngay</button>
         </div>
       </div>
     )

@@ -1,20 +1,104 @@
+.product-container {
+  padding-top: 50px;
+}
+.product-centered {
+  margin: var(--margin-side);
+  display: flex;
+  flex-direction: column;
+}
+.product-box {
+  display: flex;
+  flex-direction: row;
+}
+.product-left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.ad-banner img {
+  width: 100%;
+}
+.product-list-top {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.category-title-group,
+.filter-box .filter-bar {
+  display: inline-flex;
+  align-items: baseline;
+}
+.filter-box span {
+  width: 200px;
+}
+.category-title-group h4 {
+  color: var(--primary);
+  margin-right: 15px;
+}
+.category-title-group span {
+  color: var(--font-primary-light);
+}
 .product-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-item {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.card-item img {
+  width: 100%;
+}
+.product-item {
+  display: flex;
+  flex-direction: column;
+  color: var(--font-primary);
+}
+.price-box {
+  display: flex;
+  flex-direction: column;
+}
+.price-sale {
+  display: inline-flex;
+}
+.price-normal {
+  text-decoration: line-through;
+}
+.price-box .product-price {
+  margin-right: 20px;
+}
+.product-image {
+  width: 100%;
+}
+.star-box {
+  color: var(--primary);
+}
+.star-box .star-last {
+  opacity: 0.5 !important;
+  margin-right: 10px;
+}
+.star-box span {
+  color: var(--font-primary);
+}
+
+@media (max-width: 412px) {
+  .filter-box {
+    display: none;
   }
-  
-  .card-item {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+}
+@media (max-width: 768px) {
+  .product-left {
+    display: none;
   }
-  
-  .product-item {
-    margin: 10px 0px;
+  .product-centered {
+    margin: 0 20px;
   }
-  
-  .product-image {
-    width: 100%;
+  .product-list {
+    justify-content: space-around;
   }
+}

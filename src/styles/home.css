@@ -1,89 +1,91 @@
-.home-content{
-  margin: 0px 140px;
+.home-content {
+  padding-top: 50px;
+  margin: var(--margin-side);
 }
-.app-header{
-  position: absolute;
-  z-index: 1;
-  background: transparent;
-}
-.slide-img{
-  width: 100%;
-  display:block; 
-  height: auto;
-}
-.slick-dots{
-  bottom: 5px;
-}
-.intro-text{
+.intro-text {
   position: absolute;
   z-index: 2;
   top: 20%;
   left: 140px;
-  color: white;
+  color: black;
 }
-.video-intro{
+.video-intro {
   display: inline-flex;
 }
-.card-group, .benefit-box{
+.benefit-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.card-item{
-  width: 330px;
-  margin: 0px 20px 20px 0px
+.card-group-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.card-item img{
-  width: 100%;
+.card-group-home .card-item {
+  width: 350px;
 }
-.benefit-group{
+.benefit-group {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.benefit-item{
+.benefit-item {
   width: 200px;
-  margin: 0px 20px 20px 0px
+  margin: 0px 20px 20px 0px;
 }
-.benefit-item img{
+.benefit-item img {
   width: 100%;
 }
-.parallax{
+.parallax {
   background-image: url(../images/img-parallax.png);
-  min-height: 350px; 
+  min-height: 350px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.parallax-text-group{
+.parallax-text-group {
   color: white;
 }
-.customer-group{
+.customer-group {
   margin: 0px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-.customer-img-group{
+.customer-img-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.customer-img{
+.customer-img {
   width: 70px;
-  margin-left:20px
+  margin-left: 20px;
 }
-.customer-img img{
+.customer-img img {
   width: 100%;
 }
-.banner-bottom img{
+.banner-bottom-home {
+  display: inline-flex;
+  justify-content: center;
   width: 100%;
+  background-image: url("../images/banner/banner-bottom-home.png");
+  background-position: center;
+  padding: 20px 20px;
 }
-@media(max-width: 768px){
-  .home-content{
+.banner-bottom h4{
+  color: white;
+  margin-right: 50px;
+}
+@media (max-width: 768px) {
+  .home-content {
     margin: 0px 20px;
-  }  
+  }
+  .card-group-home {
+    justify-content: space-around;
+  }
 }

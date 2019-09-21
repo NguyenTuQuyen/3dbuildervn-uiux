@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import logo from '../../images/logo.svg'
+import { Link } from 'react-router-dom'
 
 export class Footer extends Component {
   render() {
@@ -6,13 +8,10 @@ export class Footer extends Component {
       <div className="footer-container">
         <div className="footer-content">
           <div className="logo-group">
-            <div className="logo-box">
-              <div className="logo">
-                <img src="" alt="3dbuilder.vn logo" />
-              </div>
-              <div className="text-description">
-                dsdgfg
-              </div>
+            <Link to="/" className="brand-logo">
+              <img src={logo} className="logo" alt="logo" />3dbuilder.vn </Link>
+            <div className="description">
+
             </div>
             <div className="social-box">
               <img src="" alt="facebook" />

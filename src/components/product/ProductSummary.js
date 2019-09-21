@@ -1,33 +1,37 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import CurrencyFormat from 'react-currency-format';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { addToCart } from '../../store/actions/cartAction';
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import {connect} from 'react-redux'
-
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 class ProductSummary extends Component {
-  handleAddProduct = (product) => {
-    this.props.addToCart(product); 
-  }
   render() {
     const product = this.props.product
     return (
-      <div className="product-list ">
-        <div className="product-item col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <div className="card-item">
+      <div className="card-item ">
+        <Link to={'/product/' + product.id} key={product.id} className="detail-group">
+          <div className="product-item">
             <img className="product-image" src='https://3dbuilder.vn/images/home-var-2-650x495.jpg' alt={product.title} />
             <span className="product-title">{product.title}</span>
-            <span className="product-price">$ {product.price}</span>
-            <button to="/" className="btn btn-primary" onClick={() => { this.handleAddProduct(product) }}><FontAwesomeIcon icon={faPlus} />Add</button>
+            <div className="price-box">
+              <div className="price-sale">
+                <h5 className="product-price"><CurrencyFormat value={product.price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></h5>
+                <span>-20%</span>
+              </div>
+              <span className="price-normal"><CurrencyFormat value={product.price + 500} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value}</div>} /></span>
+            </div>
+            <div className="star-box">
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon className="star-last" icon={faStar} />
+              <span>5 nhận xét </span>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
+
     )
   }
-
 }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addToCart: (product)=>{dispatch(addToCart(product))}
-  }  
-}
-export default connect(null,mapDispatchToProps)(ProductSummary)
+export default ProductSummary
