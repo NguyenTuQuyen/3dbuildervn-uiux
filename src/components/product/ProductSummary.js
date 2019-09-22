@@ -17,7 +17,7 @@ class ProductSummary extends Component {
                 <h5 className="product-price"><CurrencyFormat value={product.price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></h5>
                 <span>-20%</span>
               </div>
-              <span className="price-normal"><CurrencyFormat value={product.price + 500} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value}</div>} /></span>
+              <span className="price-normal"><CurrencyFormat value={product.price + 500} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
             </div>
             <div className="star-box">
               <FontAwesomeIcon icon={faStar} />

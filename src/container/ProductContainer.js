@@ -7,7 +7,8 @@ import Slider from "react-slick";
 import imgSlider1 from '../images/banner/product-slider/banner1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faSortDown } from '@fortawesome/free-solid-svg-icons'
-import adBanner from '../images/banner/ad-banner.jpg'
+import adBanner from '../images/banner/ad-banner-product.jpg'
+import Subcribe from '../components/layout/Subcribe'
 
 export class ProductContainer extends Component {
   render() {
@@ -21,6 +22,8 @@ export class ProductContainer extends Component {
       autoplaySpeed: 3000
     };
     const { products } = this.props
+    console.log(products);
+    
     return (
       <div className="product-container">
         <div className="product-slider">
@@ -89,11 +92,11 @@ export class ProductContainer extends Component {
             </div>
           </div>
           <div className="product-viewed">
-            <h4>3D print</h4>
+            <h4>Sản phẩm bạn đã xem</h4>
             <ProductListSlider products={products} />
           </div>
         </div>
-
+        <Subcribe />
       </div>
     )
   }

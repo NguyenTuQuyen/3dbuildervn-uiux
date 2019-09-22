@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-export class Breadcrumb extends Component {
+class Breadcrumb extends Component {
   render() {
     const items = [
       { to: '/', label: 'Trang chủ' },
-      { to: '/products', label: 'Sản phẩm' }
+      { to: '/products', label: 'Sản phẩm' },
+      { to: '/product/'+ this.props.id, label: this.props.title }
     ]
     return (
       <div className="breadcrumb-container">
@@ -18,6 +19,5 @@ export class Breadcrumb extends Component {
     )
   }
 }
-
 export default Breadcrumb
 

@@ -96,7 +96,7 @@
     display: none;
   }
   .product-centered {
-    margin: 0 20px;
+    margin: var(--margin-side-mb)
   }
   .product-list {
     justify-content: space-around;
