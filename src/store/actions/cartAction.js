@@ -1,8 +1,8 @@
 import { ADD_TO_CART, ADD_QUANTITY, SUBTRACT_QUANTITY, REMOVE_ITEM } from '../constants/ActionTypes'
-export const addToCart = (product) => {
+export const addToCart = (id) => {
   return {
     type: ADD_TO_CART,
-    product
+    id
   }
 }
 export const addQuantity = (id) => {

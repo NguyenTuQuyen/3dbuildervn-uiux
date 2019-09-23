@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faHeart, faShoppingCart, faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { addToCart } from '../../store/actions/cartAction'
 import Breadcrumb from '../layout/Breadcrumb'
+import { Link } from 'react-router-dom'
 import { ProductListSlider } from '../product/ProductList'
 import Subcribe from '../layout/Subcribe'
 import CurrencyFormat from 'react-currency-format';
@@ -21,8 +22,9 @@ import commentImg2 from '../../images/comment-img/comment-img2.png'
 
 
 class ProductDetail extends Component {
-  handleAddProduct = (product) => {
-    this.props.addToCart(product);
+  handleAddProduct = (id) => {
+    console.log(id);
+    this.props.addToCart(id);
   }
   render() {
     const { productsArray, product, id } = this.props
@@ -63,7 +65,7 @@ class ProductDetail extends Component {
                         <h5 className="product-price"><CurrencyFormat value={product.price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></h5>
                         <span>-20%</span>
                       </div>
-                      <span className="price-normal"><CurrencyFormat value={product.price + 500} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
+                      <span className="price-normal"><CurrencyFormat value={parseInt(product.price) + 500000} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
                     </div>
                     <span className="product-detail-short-description">
                       <ul className="short-description-list">
@@ -75,8 +77,10 @@ class ProductDetail extends Component {
                       </ul>
                     </span>
                     <div className="button-add-product-group">
-                      <button to="/" className="btn btn-primary btn-add-product" onClick={() => { this.handleAddProduct(product) }}><FontAwesomeIcon icon={faShoppingCart} />Chọn mua</button>
-                      <button to="/" className="btn btn-favorite"><FontAwesomeIcon icon={faHeart} />Thêm vào yêu thích</button>
+                      <Link to="/cart" >
+                        <button className="btn btn-primary btn-add-product" onClick={() => { this.handleAddProduct(id) }}><FontAwesomeIcon icon={faShoppingCart} />Chọn mua</button>
+                      </Link>
+                      <button className="btn btn-favorite"><FontAwesomeIcon icon={faHeart} />Thêm vào yêu thích</button>
                     </div>
                     <div className="tag-box">
                       <div className="tag-title">Tag</div>
@@ -274,7 +278,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (product) => { dispatch(addToCart(product)) }
+    addToCart: (id) => { dispatch(addToCart(id)) }
   }
 }
 export default compose(

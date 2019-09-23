@@ -4,6 +4,7 @@
 @import "./products.css";
 @import "./cart.css";
 @import "./productDetail.css";
+@import "./createProduct.css";
 
 :root {
   --primary: #0575e6;

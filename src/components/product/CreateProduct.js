@@ -7,7 +7,7 @@ class CreateProduct extends Component {
     title: "",
     description: "",
     price: 0,
-    image: "",
+    image: null,
     quantity: 0,
     supplier: ""
   }
@@ -22,8 +22,8 @@ class CreateProduct extends Component {
   }
   render() {
     return (
-      <div className="sign-container">
-        <form onSubmit={this.handleSubmit} className="login-form">
+      <div className="create-product-container">
+        <form onSubmit={this.handleSubmit} className="create-product-form">
           <h5>Tạo sản phẩm mới</h5>
           <div className="input-field title">
             <label htmlFor="title">Tên sản phẩm</label>
