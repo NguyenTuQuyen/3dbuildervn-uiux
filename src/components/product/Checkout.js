@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { addQuantity, subtractQuantity, removeItem } from '../../store/actions/cartAction'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import Subcribe from '../layout/Subcribe'
 import CurrencyFormat from 'react-currency-format';
 import { BreadcrumbCheckout } from '../layout/Breadcrumb'
@@ -151,11 +147,5 @@ const mapStateToProps = (state) => {
     total: state.cart.total
   }
 }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addQuantity: (id) => { dispatch(addQuantity(id)) },
-    subtractQuantity: (id) => { dispatch(subtractQuantity(id)) },
-    removeItem: (id) => { dispatch(removeItem(id)) },
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
+
+export default connect(mapStateToProps)(Checkout)
