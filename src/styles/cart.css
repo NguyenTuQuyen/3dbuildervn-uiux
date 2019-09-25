@@ -1,47 +1,109 @@
 .cart-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
-.cart-centered{
+.cart-centered {
   margin: var(--margin-side-lg);
   display: flex;
   flex-direction: column;
 }
-.cart-content{
+.cart-content {
   display: inline-flex;
 }
-.cart-list-group{
+.cart-list-group {
   width: 65%;
 }
-.cart-title{
+.cart-title {
   display: inline-flex;
   align-items: baseline;
 }
-.cart-list, .added-item-detail{
+.cart-list,
+.added-item-detail,
+.added-item-price,
+.cart-total-box,
+.cart-total,
+.user-info,
+.total-shipping {
   display: flex;
   flex-direction: column;
 }
-.added-item, .added-item-content-group, .added-item-edit-group{
+.added-item,
+.added-item-detail-price,
+.added-item-edit-group,
+.price-normal-group,
+.added-item-price-box,
+.user-info-edit-group{
   display: inline-flex;
 }
-.added-item-image{
+.user-info-edit-group,
+.total-no-shipping,
+.total-shipping-fee,
+.grand-total{
+  display: inline-flex;
+  justify-content: space-between;
+}
+.added-item-detail-price {
+  width: 100%;
+  justify-content: space-between;
+}
+.cart-total-box{
+  align-items: center;
+}
+.added-item-image {
   width: 100px;
   height: 100px;
   border: 1px solid var(--gray-line);
   border-radius: 4px;
 }
+.added-item-price {
+  text-align: end;
+}
+.cart-total{
+  border: 1px solid var(--gray-line);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.total-shipping{
+  border-top: 1px solid var(--gray-line);
+}
+.grand-total{
+  border-top: 2px solid var(--gray-line);
+}
+.grand-total-group{
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+.btn-checkout{
+  margin-top: 10px;
+}
 @media (max-width: 412px) {
-
+  .added-item-price-box {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 @media (max-width: 768px) {
-  .cart-centered{
-    margin: 0px 20px;
-  }
-  .cart-content{
+  .cart-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .cart-list-group{
+  .cart-list-group {
     width: 100%;
+  }
+  .added-item-detail-price {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1024px) {
+  .cart-centered {
+    margin: var(--margin-side-mb);
+  }
+}
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .cart-centered {
+    margin: var(--margin-side);
   }
 }

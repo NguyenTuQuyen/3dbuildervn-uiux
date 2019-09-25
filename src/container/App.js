@@ -10,7 +10,7 @@ import CreateProduct from '../components/product/CreateProduct'
 import Cart from '../components/product/Cart'
 import SignIn from '../components/auth/SignIn'
 import SignUp from '../components/auth/SignUp'
-import { Checkout } from '../components/product/Checkout';
+import Checkout from '../components/product/Checkout';
 import $ from 'jquery'
 
 class App extends Component {

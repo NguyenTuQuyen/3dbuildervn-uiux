@@ -5,7 +5,7 @@ import { compose } from 'redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faHeart, faShoppingCart, faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { addToCart } from '../../store/actions/cartAction'
-import Breadcrumb from '../layout/Breadcrumb'
+import {BreadcrumbProducts} from '../layout/Breadcrumb'
 import { Link } from 'react-router-dom'
 import { ProductListSlider } from '../product/ProductList'
 import Subcribe from '../layout/Subcribe'
@@ -32,7 +32,7 @@ class ProductDetail extends Component {
       return (
         <div className="product-detail-container">
           <div className="product-detail-centered">
-            <Breadcrumb id={id} title={product.title} />
+            <BreadcrumbProducts id={id} title={product.title} />
             <div className="product-detail-content">
               <div className="product-detail-left">
                 <div className="product-detail-item">

@@ -1,0 +1,30 @@
+.checkout-container {
+  margin-top: 50px;
+}
+.checkout-container .added-item-image {
+  width: 50px;
+  height: 50px;
+}
+.checkout-container .added-item-title {
+  width: 70%;
+}
+.payment-list,
+.pay-method-detail{
+  display: flex;
+  flex-direction: column;
+}
+.payment-item{
+  display: inline-flex;
+  width: 100%;
+}
+.pay-method-list{
+  display: inline-flex;
+  width: 70%;
+}
+.payment-item{
+  justify-content: space-between;
+}
+.pay-method-image{
+  width: 100px;
+  height: auto;
+}
