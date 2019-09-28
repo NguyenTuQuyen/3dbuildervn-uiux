@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {Redirect} from 'react-router-dom'
 import Subcribe from '../layout/Subcribe'
 import CurrencyFormat from 'react-currency-format';
 import { BreadcrumbCheckout } from '../layout/Breadcrumb'
@@ -9,18 +10,7 @@ import internetbk from '../../images/payment/internetbk.png'
 import momo from '../../images/payment/momo.png'
 
 class Checkout extends Component {
-  handleAddQuantity = (id) => {
-    this.props.addQuantity(id)
-  }
-  handleSubtractQuantity = (id) => {
-    this.props.subtractQuantity(id)
-  }
-  handleRemoveProduct = (id) => {
-    this.props.removeItem(id)
-  }
   render() {
-    console.log(this.props.products.length);
-
     let addedItems = this.props.products.length ?
       (this.props.products.map(item => {
         return (
@@ -36,8 +26,10 @@ class Checkout extends Component {
       ) : (
         <p><b>Không có sản phẩm nào trong giỏ hàng</b></p>
       )
+    
     return (
       <div className="checkout-container">
+        {this.props.auth.uid ? (
         <div className="cart-centered">
           <BreadcrumbCheckout />
           <div className="cart-list-group">
@@ -136,6 +128,9 @@ class Checkout extends Component {
             </div>
           </div>
         </div>
+        ):(
+          <Redirect to="/login" />
+        )}
         <Subcribe />
       </div>
     )
@@ -144,7 +139,8 @@ class Checkout extends Component {
 const mapStateToProps = (state) => {
   return {
     products: state.cart.addedItems,
-    total: state.cart.total
+    total: state.cart.total,
+    auth: state.firebase.auth
   }
 }
 

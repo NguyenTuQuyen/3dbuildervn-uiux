@@ -1,35 +1,116 @@
-a{
+a {
   text-decoration: none !important;
 }
 .app-header {
   width: 100%;
   background-color: white;
   list-style: none;
-  padding: 10px 10px;
+  padding: 10px 0px 0px 0px;
   position: fixed;
   top: 0;
   z-index: 10;
   box-shadow: var(--box-shadow-xm);
   color: var(--primary) !important;
-  }
-.app-header li {
-  margin-right: 10px;
 }
-.app-header:hover{
+.app-header:hover {
   text-decoration: none;
 }
-.logo-box, .left, .right, .nav-menu{
+.logo-box, .left {
+  float: left;
+}
+.left li{
+  margin-right: 20px;
+}
+.search-box li{
+  margin-left: 15px;
+}
+.right {
+  float: right;
+}
+.nav-container > .left > *,
+.nav-container > .right > * {
   display: inline-flex;
+  text-align: center;
+  min-width: 40px;
 }
-.nav-container{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.nav-container {
+  margin: var(--margin-side);
 }
-.logo{
-  width: 12%;
+.brand-logo{
+  display: inline-flex !important;
 }
-.login-group{
+.logo {
+  width: 15%;
+  margin-top: -5px;
+}
+.logo-box span {
+  font-size: 18px;
+  font-weight: bold;
+}
+.toggle-icon {
+  display: none;
+  float: left;
+}
+.search-box{
+  display: none;
+}
+@media (max-width: 412px) {
+  .logo-box span {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+@media (max-width: 768px) {
+  .nav-container {
+    margin: var(--margin-side-mb);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+  .toggled{
+    display: block !important;
+  }
+  .toggled .search-box{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  .toggled .search-box li{
+    margin-left: 15px !important;
+  }
+  .left,
+  .right {
+    display: none;
+  }
+  .logo{
+    width: 30px;
+    margin-top: 0px;
+  }
+  .toggle-icon {
+    display: block !important;
+  }
+  .toggled .toggle-icon{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+  .logo-box{
+    text-align-last: center ;
+  }
+  .search-icon, .cart-icon{
+    display: none;
+  }
+  .search-box{
     display: inline-flex;
+  }
+  .nav-container .toggled {
+    max-height: 1500px;
+    transition: max-height 1s;
+  }
+  .nav-container.toggled *:not(.brand-logo):not(.toggle-icon):not(.search-box):not(.search-icon):not(.cart-icon) {
+    float: none;
+    display: block !important;
+    text-align: left;
+    margin: 0;
+  }
 }
