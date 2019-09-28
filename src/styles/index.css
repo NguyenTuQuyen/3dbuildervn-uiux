@@ -8,11 +8,12 @@
 @import "./checkout.css";
 :root {
   --primary: #0575e6;
+  --blue1: #4fa7ff;
   --opaque-primary: #f1f9ff;
   --secondary: #001b38;
   --font-primary: #4b4b4b;
   --font-primary-light: #757575;
-  --gray-line: #D1D1D1;
+  --gray-line: #d1d1d1;
   --box-shadow-xm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --box-shadow-m: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --box-shadow-l: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -86,10 +87,71 @@ code {
 .subcribe-description img {
   margin-right: 25px;
 }
+/* button */
+.button-primary {
+  background: var(--linear-gradient-primary-rl);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  padding: 5px 20px;
+  margin: 10px 0px;
+}
+.button-primary:hover {
+  background: var(--linear-gradient-primary-hover-rl);
+}
+.button-default {
+  background: var(--primary);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  padding: 5px 20px;
+  margin: 10px 0px;
+}
+.button-default:hover {
+  background: var(--blue1);
+}
+.button-primary-white{
+  color: var(--primary);
+  background: var(--opaque-primary);
+}
+.button-primary-white:hover{
+  background: white;
+}
+/* text */
+.title {
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: bold;
+}
+.sub-title {
+  font-size: 20px;
+}
+/* card */
+.card-group-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-item {
+  width: 350px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: var(--box-shadow-xm);
+}
+.card-item img {
+  width: 100%;
+}
+.card-item:hover {
+  box-shadow: var(--box-shadow-l);
+}
 @media (max-width: 412px) {
 }
 @media (max-width: 768px) {
   .banner-bottom-subcribe {
     padding: 20px;
+  }
+  .card-group-home {
+    justify-content: space-around;
   }
 }
