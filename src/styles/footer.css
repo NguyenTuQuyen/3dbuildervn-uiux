@@ -3,16 +3,76 @@
   flex-direction: column;
   max-height: 700px;
 }
-.footer-content{
+.footer-box {
+  background: var(--secondary);
+}
+.footer-content {
   display: inline-flex;
   justify-content: space-between;
-  margin: 0px 140px;
+  padding: 50px 140px;
+  color: white;
+  width: 100%;
 }
-.logo-group{
-  width: 300px;
+.copy-rignt {
+  background: var(--blue2);
+  color:#9DA7B2;
+  text-align: center;
+  padding: 10px 0px;
 }
-@media(max-width: 768px){
-  .footer-content{
-    margin: 0px 20px;
-  }  
+.logo-group-footer {
+  width: 30%;
+  display: inline-flex;
+}
+.description-box{
+  display: flex;
+  flex-direction: column;
+}
+.brand-logo-footer{
+  align-self: flex-start;
+  padding-top: 10px;
+}
+.logo-group-footer img{
+  width: 80%;
+}
+.logo-text-footer{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.social-box{
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.social-box img{
+  width: 15%;
+  margin-left: 10px;
+}
+.footer-title{
+  margin-bottom: 10px;
+}
+.footer-link-item{
+  margin: 10px 0px;
+  color: #B3C0CB;
+}
+.footer-link-item:hover{
+  color: white;
+  cursor: pointer;
+}
+.payment-img-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.payment-img-group img{
+  width: 10%;
+  margin-right: 10px;
+}
+@media (max-width: 412px){
+
+}
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 40px 20px;
+  }
 }

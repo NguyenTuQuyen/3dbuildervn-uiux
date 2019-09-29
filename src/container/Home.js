@@ -159,7 +159,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div class="parallax">
+        <div className="parallax">
           <div className="parallax-text-group">
             <div className="title">3dbuilder.vn <span style={{color: "white"}}>cung cấp dịch vụ thiết kế và in các sản phẩm 3D</span></div>
             <div className="description">No importa tu profesión: ya seas un fotógrafo, músico, tengas un restaurante o un hotel o te dediques a cualquier otra cosa, puedes administrar tu página web y negocio online en un solo lugar. </div>

@@ -23,7 +23,7 @@
 .video-intro {
   display: inline-flex;
   justify-content: space-between;
-  margin: 20px 0px 10px 0px;
+  margin: 40px 0px 20px 0px;
 }
 .video-frame,
 .video-description {
@@ -36,13 +36,12 @@
 }
 .feature-group,
 .benefit-group {
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 .benefit-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0px;
 }
 .benefit-item {
   width: 200px;
@@ -59,21 +58,21 @@
 }
 .parallax {
   background-image: url(../images/img-parallax.png);
-  min-height: 350px;
+  min-height: 450px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 .parallax-text-group {
   margin: 0px 280px;
   width: 30%;
   color: white;
-  padding-top: 40px;
+  padding-top: 100px;
 }
 .customer-group {
-  margin: 10px 280px;
+  padding: 40px 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,10 +132,9 @@
   background-image: url("../images/banner/banner-bottom-home.png");
   background-position: center;
   padding: 20px 20px;
-  margin-top: 10px;
   align-items: center;
 }
-.banner-bottom-home .sub-title-banner{
+.banner-bottom-home .sub-title-banner {
   font-size: 30px;
   color: white;
   margin-right: 50px;
@@ -145,10 +143,10 @@
   .intro-text .intro-text-title {
     font-size: 16px;
   }
-  .banner-bottom-home .button-banner-box{
-    width: 70% ;
+  .banner-bottom-home .button-banner-box {
+    width: 70%;
   }
-  .banner-bottom-home .sub-title-banner{
+  .banner-bottom-home .sub-title-banner {
     font-size: 18px;
     margin-right: 20px;
   }
@@ -174,9 +172,17 @@
     flex-direction: column;
     text-align: center;
   }
-  .parallax-text-group,
+  .parallax{
+    padding: 20px 20px;
+    width: 100%;
+  }
+  .parallax-text-group {
+    margin: 0px;
+    width: 100%;
+    padding-top: 50px;
+  }
   .customer-group {
-    margin: var(--margin-side-mb);
+    padding: 20px 20px;
     width: 100%;
   }
 }
@@ -184,7 +190,7 @@
   .intro-text .intro-text-title {
     font-size: 24px;
   }
-  .banner-bottom-home .sub-title-banner{
+  .banner-bottom-home .sub-title-banner {
     font-size: 24px;
   }
 }
