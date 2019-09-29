@@ -16,7 +16,7 @@ export class Footer extends Component {
           <div className="footer-content">
             <div className="logo-group-footer">
               <Link to="/" className="brand-logo-footer">
-                <img src={logo} alt="logo" />
+                <img className="brand-logo-footer-img" src={logo} alt="logo" />
               </Link>
               <div className="description-box">
                 <span className="logo-text-footer">3dbuilder.vn</span>
@@ -26,8 +26,8 @@ export class Footer extends Component {
                   <span>Email: contact@3dbuilder.vn</span><br />
                 </div>
                 <div className="social-box">
-                  <img src={facebook} alt="facebook" />
-                  <img src={youtube} alt="youtube" />
+                  <img className="social-box-item" src={facebook} alt="facebook" />
+                  <img className="social-box-item" src={youtube} alt="youtube" />
                 </div>
               </div>
 

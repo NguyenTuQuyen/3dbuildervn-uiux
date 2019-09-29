@@ -15,64 +15,70 @@
 }
 .copy-rignt {
   background: var(--blue2);
-  color:#9DA7B2;
+  color: #9da7b2;
   text-align: center;
   padding: 10px 0px;
 }
 .logo-group-footer {
-  width: 30%;
   display: inline-flex;
 }
-.description-box{
+.description-box {
   display: flex;
   flex-direction: column;
 }
-.brand-logo-footer{
+.brand-logo-footer {
   align-self: flex-start;
   padding-top: 10px;
 }
-.logo-group-footer img{
+.brand-logo-footer-img {
   width: 80%;
+  min-width: 100px;
 }
-.logo-text-footer{
+.logo-text-footer {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.social-box{
+.social-box {
   display: inline-flex;
-  justify-content: flex-end;
   margin-top: 20px;
 }
-.social-box img{
-  width: 15%;
-  margin-left: 10px;
+.social-box-item {
+  width: 40px;
+  margin-right: 10px;
 }
-.footer-title{
+.footer-title {
   margin-bottom: 10px;
 }
-.footer-link-item{
+.footer-link-item {
   margin: 10px 0px;
-  color: #B3C0CB;
+  color: #b3c0cb;
 }
-.footer-link-item:hover{
+.footer-link-item:hover {
   color: white;
   cursor: pointer;
 }
-.payment-img-group{
+.payment-img-group {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.payment-img-group img{
-  width: 10%;
+.payment-img-item{
+  width: 50px;
   margin-right: 10px;
 }
-@media (max-width: 412px){
-
+@media (max-width: 412px) {
+  .customer-support,
+  .footer-link,
+  .payment-group {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .footer-content {
     padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
