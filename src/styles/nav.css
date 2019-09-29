@@ -21,7 +21,7 @@ a {
 .left li{
   margin-right: 20px;
 }
-.search-box li{
+.search-cart-box li{
   margin-left: 15px;
 }
 .right {
@@ -51,7 +51,7 @@ a {
   display: none;
   float: left;
 }
-.search-box{
+.search-cart-box{
   display: none;
 }
 @media (max-width: 412px) {
@@ -70,12 +70,12 @@ a {
   .toggled{
     display: block !important;
   }
-  .toggled .search-box{
+  .toggled .search-cart-box{
     position: absolute;
     right: 20px;
     top: 15px;
   }
-  .toggled .search-box li{
+  .toggled .search-cart-box li{
     margin-left: 15px !important;
   }
   .left,
@@ -100,14 +100,14 @@ a {
   .search-icon, .cart-icon{
     display: none;
   }
-  .search-box{
+  .search-cart-box{
     display: inline-flex;
   }
   .nav-container .toggled {
     max-height: 1500px;
     transition: max-height 1s;
   }
-  .nav-container.toggled *:not(.brand-logo):not(.toggle-icon):not(.search-box):not(.search-icon):not(.cart-icon) {
+  .nav-container.toggled *:not(.brand-logo):not(.toggle-icon):not(.search-cart-box):not(.search-icon):not(.cart-icon) {
     float: none;
     display: block !important;
     text-align: left;

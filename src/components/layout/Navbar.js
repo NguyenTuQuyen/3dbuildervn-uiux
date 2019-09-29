@@ -46,7 +46,7 @@ class NavBar extends Component {
             <li><Link to="/notification"><FontAwesomeIcon icon={faBell} /></Link></li>
             <li>{links}</li>
           </div>
-          <div className="search-box">
+          <div className="search-cart-box">
             <li><Link to="/search"><FontAwesomeIcon icon={faSearch} /></Link></li>
             <li><Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
           </div>

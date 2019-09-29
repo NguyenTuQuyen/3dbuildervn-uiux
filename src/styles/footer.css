@@ -68,17 +68,15 @@
   margin-right: 10px;
 }
 @media (max-width: 412px) {
-  .customer-support,
-  .footer-link,
-  .payment-group {
-    display: none;
-  }
+  
 }
 @media (max-width: 768px) {
   .footer-content {
     padding: 40px 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  }
+  .customer-support,
+  .footer-link,
+  .payment-group {
+    display: none;
   }
 }

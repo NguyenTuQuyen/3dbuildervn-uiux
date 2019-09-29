@@ -7,7 +7,7 @@ class ProductSummary extends Component {
   render() {
     const product = this.props.product
     return (
-      <div className="card-item ">
+      <div className="card-item">
         <Link to={'/product/' + product.id} key={product.id} className="detail-group">
           <div className="product-item">
             <img className="product-image" src='https://3dbuilder.vn/images/home-var-2-650x495.jpg' alt={product.title} />

@@ -49,8 +49,8 @@ export class ProductContainer extends Component {
           <div className="product-box">
             <div className="product-left">
               <div className="search-box">
-                <input type="text" placeholder="Nhập nội dung cần tìm..." />
-                <FontAwesomeIcon icon={faSearch} />
+                <input className="search-input" type="text" placeholder="Nhập nội dung cần tìm..." />
+                <FontAwesomeIcon className="search-icon" icon={faSearch} />
               </div>
               <div className="category-box">
                 <div className="category-title">Danh mục</div>
@@ -64,8 +64,8 @@ export class ProductContainer extends Component {
                 <div className="tag-title">Tag</div>
                 <div className="tag-list">
                   <button className="tag-item">máy in 3D</button>
-                  <button className="tag-item">máy in 3D</button>
-                  <button className="tag-item">máy in 3D</button>
+                  <button className="tag-item">VR/AR</button>
+                  <button className="tag-item">3D template</button>
                   <button className="tag-item">máy in 3D</button>
                   <button className="tag-item">máy in 3D</button>
                 </div>
@@ -77,14 +77,14 @@ export class ProductContainer extends Component {
             <div className="product-right">
               <div className="product-list-top">
                 <div className="category-title-group">
-                  <h4>3D print</h4>
+                  <span className="title">3D print</span>
                   <span>203 sản phẩm</span>
                 </div>
                 <div className="filter-box">
                   <span>Sắp xếp theo</span>
                   <div className="filter-bar">
-                    <div>Mới nhất</div>
-                    <FontAwesomeIcon icon={faSortDown} />
+                    <span>Mới nhất</span>
+                    <FontAwesomeIcon className="filter-icon" icon={faSortDown} />
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export class ProductContainer extends Component {
             </div>
           </div>
           <div className="product-viewed">
-            <h4>Sản phẩm bạn đã xem</h4>
+            <div className="sub-title">Sản phẩm bạn đã xem</div >
             <ProductListSlider products={products} />
           </div>
         </div>
