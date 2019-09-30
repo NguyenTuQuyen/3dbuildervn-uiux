@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faHeart, faShoppingCart, faSortDown } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faHeart, faShoppingCart, faSortDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { addToCart } from '../../store/actions/cartAction'
 import {BreadcrumbProducts} from '../layout/Breadcrumb'
 import { Link } from 'react-router-dom'
@@ -17,8 +17,11 @@ import giftBox from '../../images/icon-product-detail/gift-box.png'
 import phone from '../../images/icon-product-detail/phone.png'
 import email from '../../images/icon-product-detail/email.png'
 import peter from '../../images/avatar/peter.png'
+import john from '../../images/avatar/john.png'
+import maria from '../../images/avatar/maria.png'
 import commentImg1 from '../../images/comment-img/comment-img1.png'
 import commentImg2 from '../../images/comment-img/comment-img2.png'
+import commentImg3 from '../../images/comment-img/comment-img3.png'
 
 
 class ProductDetail extends Component {
@@ -48,7 +51,7 @@ class ProductDetail extends Component {
                     </div>
                   </div>
                   <div className="product-detail-info">
-                    <h4 className="product-detail-title">{product.title}Máy in 3D MakerBot Replicator 2</h4>
+                    <span className="sub-title">{product.title}</span>
                     <div className="star-brand-box">
                       <div className="star-box">
                         <FontAwesomeIcon icon={faStar} />
@@ -58,7 +61,7 @@ class ProductDetail extends Component {
                         <FontAwesomeIcon className="star-last" icon={faStar} />
                         <span>5 nhận xét </span>
                       </div>
-                      <span>Thương hiệu: MakerBot</span>
+                      <span>Thương hiệu: <span style={{color: "var(--primary"}}>MakerBot</span></span>
                     </div>
                     <div className="price-box">
                       <div className="price-sale">
@@ -78,24 +81,23 @@ class ProductDetail extends Component {
                     </span>
                     <div className="button-add-product-group">
                       <Link to="/cart" >
-                        <button className="btn btn-primary btn-add-product" onClick={() => { this.handleAddProduct(id) }}><FontAwesomeIcon icon={faShoppingCart} />Chọn mua</button>
+                        <button className="button-default" onClick={() => { this.handleAddProduct(id) }}><FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />Chọn mua</button>
                       </Link>
-                      <button className="btn btn-favorite"><FontAwesomeIcon icon={faHeart} />Thêm vào yêu thích</button>
+                      <button className="btn button-favorite"><FontAwesomeIcon className="heart-icon" icon={faHeart} />Thêm vào yêu thích</button>
                     </div>
                     <div className="tag-box">
                       <div className="tag-title">Tag</div>
                       <div className="tag-list">
-                        <button className="tag-item">máy in 3D</button>
-                        <button className="tag-item">máy in 3D</button>
-                        <button className="tag-item">máy in 3D</button>
-                        <button className="tag-item">máy in 3D</button>
+                        <button className="tag-item">3D print</button>
+                        <button className="tag-item">VR/AR</button>
+                        <button className="tag-item">3D template</button>
                         <button className="tag-item">máy in 3D</button>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="product-detail-feature">
-                  <h4>Thông tin chi tiết</h4>
+                  <span className="sub-title">Thông tin chi tiết</span>
                   <table className="product-feature-table">
                     <tbody>
                       <tr>
@@ -123,8 +125,8 @@ class ProductDetail extends Component {
 
                 </div>
                 <div className="product-detail-long-description">
-                  <h4>Thông tin chi tiết</h4>
-                  <div>{product.description}
+                  <span className="sub-title">Mô tả sản phẩm</span>
+                  <div className="product-detail-long-description-text">{product.description}
                     <span>
                       * Xuất xứ:
 
@@ -189,18 +191,21 @@ class ProductDetail extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="sharing-button-group">sharing button</div>
+                <div className="sharing-button-group">
+                  <button className="button-like-facebook" > <FontAwesomeIcon className="facebook-like-icon" icon={faThumbsUp} />Like 61K</button>
+                  <button className="button-share-facebook" > Share</button>
+                </div>
                 <div className="product-detail-ad-banner">
                   <img src={adBanner} alt={product.title} />
                 </div>
               </div>
             </div>
-            <div className="product-viewed">
-              <h4>Sản phẩm tương tự</h4>
+            <div className="product-detail-viewed">
+              <span className="sub-title">Sản phẩm tương tự</span>
               <ProductListSlider products={productsArray} />
             </div>
-            <div className="product-comment">
-              <h4>Nhận xét về sản phẩm</h4>
+            <div className="product-detail-comment">
+              <span className="sub-title">Nhận xét về sản phẩm</span>
               <div className="comment-container">
                 <div className="create-comment-box">
                   <span>Đánh giá trung bình</span>
@@ -213,14 +218,14 @@ class ProductDetail extends Component {
                     <FontAwesomeIcon className="star-last" icon={faStar} />
                     <br /><span>5 nhận xét </span>
                   </div>
-                  <button className="btn btn-primary btn-create-comment">Viết nhận xét</button>
+                  <div><button className="button-default button-create-comment">Viết nhận xét</button></div>
                 </div>
                 <div className="show-comment-box">
                   <div className="filter-box">
                     <span>Sắp xếp theo</span>
                     <div className="filter-bar">
-                      <div>Mới nhất</div>
-                      <FontAwesomeIcon icon={faSortDown} />
+                      <span>Mới nhất</span>
+                      <FontAwesomeIcon className="filter-icon" icon={faSortDown} />
                     </div>
                   </div>
                   <div className="comment-item">
@@ -245,6 +250,49 @@ class ProductDetail extends Component {
                         <img src={commentImg1} alt="comment 1" />
                         <img src={commentImg2} alt="comment 1" />
                       </div>
+                    </div>
+                  </div>
+                  <div className="comment-item">
+                    <div className="avatar-group">
+                      <img src={john} alt="peter" />
+                      <div className="name-group">
+                        <span>Nguyễn Băng Khanh</span>
+                        <span className="comment-timestamp">3 tháng trước</span>
+                      </div>
+                    </div>
+                    <div className="comment-detail-box">
+                      <div className="star-box">
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon className="star-last" icon={faStar} />
+                        <span>Sản phẩm chất lượng</span>
+                      </div>
+                      <div className="comment-detail">Dòng máy in 3d desktop cho người mới tim hiểu về in 3d. Chất lượng máy ổn. Vận hành in ổn tuy nhiên lắp ráp khá khó vi phần hướng dẫn không hoàn toàn từng bước.</div>
+                      <div className="comment-image-box">
+                        <img src={commentImg3} alt="comment 2" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="comment-item">
+                    <div className="avatar-group">
+                      <img src={maria} alt="peter" />
+                      <div className="name-group">
+                        <span>Nguyễn Hy Vi</span>
+                        <span className="comment-timestamp">3 tháng trước</span>
+                      </div>
+                    </div>
+                    <div className="comment-detail-box">
+                      <div className="star-box">
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon className="star-last" icon={faStar} />
+                        <span>Sản phẩm chất lượng</span>
+                      </div>
+                      <div className="comment-detail">Dòng máy in 3d desktop cho người mới tim hiểu về in 3d. Chất lượng máy ổn. Vận hành in ổn tuy nhiên lắp ráp khá khó vi phần hướng dẫn không hoàn toàn từng bước.</div>
                     </div>
                   </div>
                 </div>
