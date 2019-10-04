@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import Subcribe from '../layout/Subcribe'
 import CurrencyFormat from 'react-currency-format';
-import {BreadcrumbCart} from '../layout/Breadcrumb'
+import { BreadcrumbCart } from '../layout/Breadcrumb'
+import {withRouter} from 'react-router-dom';
 
 class Cart extends Component {
   handleAddQuantity = (id) => {
@@ -18,9 +19,15 @@ class Cart extends Component {
   handleRemoveProduct = (id) => {
     this.props.removeItem(id)
   }
-  render() {
+  handleCheckout = () => {
     console.log(this.props.products.length);
-
+    if (this.props.products.length === 0) {
+      alert("Bạn chưa thêm sản phẩm nào vào giỏ hàng!")
+    }else{
+      return this.props.history.push('/checkout')
+    }
+  }
+  render() {
     let addedItems = this.props.products.length ?
       (this.props.products.map(item => {
         return (
@@ -31,7 +38,7 @@ class Cart extends Component {
                 <div className="added-item-title">{item.title}</div>
                 <div className="added-item-supplier">Cung cấp bởi <span style={{ color: "var(--primary)" }}>{item.supplier}</span></div>
                 <div className="added-item-edit-group">
-                  <div className="btn-remove-product" style={{ color: "var(--primary)" }} onClick={() => { this.handleRemoveProduct(item.id) }}>Xóa</div>
+                  <div className="button-remove-product" style={{ color: "var(--primary)" }} onClick={() => { this.handleRemoveProduct(item.id) }}>Xóa</div>
                   <span style={{ color: "var(--primary)" }} >Mua sau</span>
                 </div>
               </div>
@@ -40,13 +47,15 @@ class Cart extends Component {
                   <span className="added-item-price-sale"><CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
                   <div className="price-normal-group">
                     <span className="price-normal"><CurrencyFormat value={parseInt(item.price) + 500000} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
-                    <span>-20%</span>
+                    <span >-20%</span>
                   </div>
                 </div>
                 <div className="added-item-quantity-group">
-                  <Link to="/cart"><FontAwesomeIcon icon={faPlus} onClick={() => { this.handleAddQuantity(item.id) }} /></Link>
-                  <span className="added-item-quantity">{item.quantity}</span>
-                  <Link to="/cart"><FontAwesomeIcon icon={faMinus} onClick={() => { this.handleSubtractQuantity(item.id) }} /></Link>
+                  <div className="added-item-quantity-box">
+                    <Link to="/cart"><FontAwesomeIcon icon={faPlus} onClick={() => { this.handleAddQuantity(item.id) }} /></Link>
+                    <span className="added-item-quantity">{item.quantity}</span>
+                    <Link to="/cart"><FontAwesomeIcon icon={faMinus} onClick={() => { this.handleSubtractQuantity(item.id) }} /></Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,7 +72,7 @@ class Cart extends Component {
           <div className="cart-content">
             <div className="cart-list-group">
               <div className="cart-title">
-                <h4>Giỏ hàng</h4> <span>({this.props.products.length} sản phẩm)</span>
+                <span className="sub-title">Giỏ hàng</span> <span className="cart-product-count">({this.props.products.length} sản phẩm)</span>
               </div>
               <div className="cart-list">
                 {addedItems}
@@ -74,11 +83,11 @@ class Cart extends Component {
                 <div className="user-info">
                   <div className="user-info-edit-group">
                     <span>Thông tin giao hàng</span>
-                    <button>Chỉnh sửa</button>
+                    <button className="button-unfill">Chỉnh sửa</button>
                   </div>
                   <span><b>Lê Văn Chiêu</b></span>
-                  <span>421 Tái Ông Mất Ngựa, P12, Q3, HCM</span>
-                  <span>Điện thoại: 0368636145</span>
+                  <span className="user-address">421 Tái Ông Mất Ngựa, P12, Q3, HCM</span>
+                  <span className="user-phone">Điện thoại: 0368636145</span>
                   <div className="predict-shipping">Dự kiến giao hàng: 2/10/2019</div>
                 </div>
                 <div className="total-shipping">
@@ -92,11 +101,11 @@ class Cart extends Component {
                   </div>
                 </div>
                 <div className="grand-total">
-                  <span>Thành tiền:</span>
+                  <span className="grand-total-title">Thành tiền:</span>
                   {this.props.total !== 0 ? (
                     <div className="grand-total-group">
-                      <span><CurrencyFormat value={parseInt(this.props.total) + 15000} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></span>
-                      <span>Đã bao gồm VAT nếu có</span>
+                      <h5 style={{ color: "red" }}><CurrencyFormat value={parseInt(this.props.total) + 15000} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value} <span>&#8363;</span></div>} /></h5>
+                      <div className="grand-total-note">(Đã bao gồm VAT nếu có)</div>
                     </div>
                   ) : (
                       <span>0 <span>&#8363;</span></span>
@@ -104,12 +113,9 @@ class Cart extends Component {
                 </div>
               </div>
               <div>
-                <Link to="/checkout">
-                <button className="btn btn-primary btn-checkout">Thanh toán</button>
-                </Link>
+                <button className="button-default" onClick={() => { this.handleCheckout() }}>Thanh toán</button>
               </div>
             </div>
-
           </div>
         </div>
         <Subcribe />
@@ -130,4 +136,4 @@ const mapDispatchToProps = (dispatch) => {
     removeItem: (id) => { dispatch(removeItem(id)) },
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Cart))
