@@ -2,7 +2,7 @@
 ## About this web
 
 Build with react and firebase <br>
-Setting env: NodeJS
+Setting env: NodeJS <br>
 Open CMD and run
 ### `npm start`
 Runs the app in the development mode.<br>
