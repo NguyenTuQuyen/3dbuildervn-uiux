@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authAction'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 export class SignIn extends Component {
   state = {
@@ -18,12 +18,12 @@ export class SignIn extends Component {
     this.props.signIn(this.state)
   }
   render() {
-    const {authError, auth} = this.props
-    if(auth.uid) return <Redirect to='/'/>
+    const { authError, auth } = this.props
+    if (auth.uid) return <Redirect to='/' />
     return (
-      <div className="sign-container">
+      <div className="signin-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h5>Signin</h5>
+          <h5>Đăng nhập</h5>
           <div className="input-field email">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" onChange={this.handleChange} />
@@ -32,11 +32,18 @@ export class SignIn extends Component {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" onChange={this.handleChange} />
           </div>
-          <div className="input-field">
-            <button className="btn btn-primary">Login</button>
+          <div className="input-field btn-login">
+            <button className="button-default">Đăng nhập</button>
           </div>
           <div className="text-danger">
             {authError ? <p>{authError}</p> : null}
+          </div>
+          <div style={{ marginTop: "25px" }}><span>Tài khoản test:</span>
+            <br />
+            <span>Tên đăng nhập: test@gmail.com</span><br />
+            <span>Mật khẩu: 123456</span>
+          </div>
+          <div style={{ marginTop: "25px" }}><span>Nếu chưa có tài khoản: <Link to="/signup">Đăng ký</Link> </span>
           </div>
         </form>
       </div>

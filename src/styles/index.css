@@ -6,6 +6,8 @@
 @import "./productDetail.css";
 @import "./createProduct.css";
 @import "./checkout.css";
+@import "./signIn.css";
+@import "./signUp.css";
 :root {
   --primary: #0575e6;
   --blue1: #4fa7ff;
@@ -213,6 +215,8 @@ code {
 .filter-bar span{
   margin-right: 80px;
 }
+/* input */
+
 @media (max-width: 412px) {
 }
 @media (max-width: 768px) {

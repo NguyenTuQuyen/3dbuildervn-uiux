@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {signUp} from '../../store/actions/authAction'
+import { signUp } from '../../store/actions/authAction'
 
 export class SignUp extends Component {
   state = {
@@ -24,12 +24,12 @@ export class SignUp extends Component {
 
   }
   render() {
-    const {auth, authError} = this.props
-    if(auth.uid) return <Redirect to='/'/>
+    const { auth, authError } = this.props
+    if (auth.uid) return <Redirect to='/' />
     return (
       <div className="sign-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h5>Signin</h5>
+          <h5>Đăng ký</h5>
           <div className="input-field email">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" onChange={this.handleChange} />
@@ -59,10 +59,12 @@ export class SignUp extends Component {
             <input type="text" id="receiveNewsletter" onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn btn-primary">Signup</button>
+            <button className="button-default">Đăng ký</button>
           </div>
           <div className="text-danger">
             {authError ? <p>{authError}</p> : null}
+          </div>
+          <div style={{ marginTop: "25px" }}><span> <Link to="/login">Đăng nhập</Link> </span>
           </div>
         </form>
       </div>
@@ -76,8 +78,8 @@ const mapStateToProps = (state) => {
   }
 }
 const mapDispatchToProps = (dispatch) => {
-  return{
-    signUp: (newUser) => dispatch(signUp(newUser)) 
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SignUp)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
