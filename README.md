@@ -2,8 +2,7 @@
 ## About this web
 
 Build with react and firebase <br>
-To run this app, please 
-1.Setting env: NodeJS <br>
+To run this app, please setting env: NodeJS <br>
 Open CMD and run
 ### `npm install`
 ### `npm start`
