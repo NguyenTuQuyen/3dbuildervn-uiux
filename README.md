@@ -9,7 +9,7 @@ Open CMD and run
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. <br>
 
-View demo website at: http://demopayment3.000webhostapp.com/
+View demo website at: https://uiux-nguyentuquyen.000webhostapp.com/
 
 ## About the author
 Nguyen Tu Quyen - EC01
